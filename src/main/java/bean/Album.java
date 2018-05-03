@@ -26,9 +26,9 @@ public class Album implements Serializable{
 	@JoinColumn(name="idArtista")
 	private Artista artista;
 	
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="idAlbum")
-	private List<Cancion> cancion;
+//	@OneToMany(cascade=CascadeType.ALL)
+//	@JoinColumn(name="idAlbum")
+//	private List<Cancion> cancion;
 	
 	public Album() 
 	{		
