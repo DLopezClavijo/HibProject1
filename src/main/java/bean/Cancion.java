@@ -19,10 +19,11 @@ public class Cancion implements Serializable{
  private int idCancion;
  private String nombre;
  private int duracion;
- @GeneratedValue(strategy=GenerationType.IDENTITY)
-// private int orden;
- 
- @ManyToOne
+// @GeneratedValue(strategy=GenerationType.IDENTITY)
+ private int idX;
+
+
+@ManyToOne
  @JoinColumn(name="idAlbum")
  private Album idAlbum;
  
@@ -51,11 +52,19 @@ public int getDuracion() {
 public void setDuracion(int duracion) {
 	this.duracion = duracion;
 }
-public Cancion(String nombre, int duracion, Album album) {
+
+public int getIdX() {
+	return idX;
+}
+public void setIdX(int idX) {
+	this.idX = idX;
+}
+public Cancion(String nombre, int duracion, Album album, int idX) {
 	super();
 	this.nombre = nombre;
 	this.duracion = duracion;
 	this.idAlbum = album;
+	this.idX = idX;
 }
 
 }

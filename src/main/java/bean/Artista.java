@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +22,7 @@ public class Artista implements Serializable{
 		private String nombre;
 		
 		@OneToMany(mappedBy="artista",cascade=CascadeType.ALL)
+		@OrderColumn(name="idAlbum")
 		private Set<Album> albumes;
 		
 		public Artista() 

@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -26,9 +27,10 @@ public class Album implements Serializable{
 	@JoinColumn(name="idArtista")
 	private Artista artista;
 	
-//	@OneToMany(cascade=CascadeType.ALL)
-//	@JoinColumn(name="idAlbum")
-//	private List<Cancion> cancion;
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="idAlbum")
+	@OrderColumn(name="idX")
+	private List<Cancion> canciones;
 	
 	public Album() 
 	{		
